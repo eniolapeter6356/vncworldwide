@@ -9,7 +9,7 @@ export const translateText = async (text: string, targetLang: Language): Promise
   if (cached) return cached;
 
   try {
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GOOGLE_AI_KEY });
     const prompt = `Translate this church network website text into ${
       targetLang === 'fr' ? 'French' : 'Dutch'
     }. Keep it professional, spiritual, and welcoming. Return ONLY the translated string: "${text}"`;

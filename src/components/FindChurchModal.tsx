@@ -22,7 +22,7 @@ const FindChurchModal: React.FC<FindChurchModalProps> = ({ onClose, lang }) => {
     setLoading(true);
     setResults(null);
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GOOGLE_AI_KEY });
       const prompt = `Find Victory Christian Network (VNC) or spirit-filled church locations in ${query}. Provide a concise list of names and addresses in ${lang === 'fr' ? 'French' : lang === 'nl' ? 'Dutch' : 'English'}.`;
       const response = await ai.models.generateContent({
         model: "gemini-3-flash-preview",
