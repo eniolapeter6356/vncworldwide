@@ -86,6 +86,10 @@ const Services: React.FC<ServicesProps> = ({ lang }) => {
           </button>
         </div>
       </div>
+      {/* Items preserved for future use */}
+      <div className="hidden">
+        <ExternalLink />
+      </div>
     </section>
   );
 };

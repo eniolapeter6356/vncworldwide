@@ -37,7 +37,6 @@ const Navbar: React.FC<NavbarProps> = ({ onFindChurch, lang, setLang }) => {
   return (
     <nav className={`fixed top-0 inset-x-0 z-[100] transition-all duration-500 ${scrolled || mobileOpen ? 'bg-white shadow-xl py-2' : 'bg-transparent py-4'}`}>
       <div className="max-w-[1440px] mx-auto px-6 flex items-center justify-between">
-        {/* Brand Identity */}
         <div className="flex items-center gap-4 cursor-pointer group" onClick={() => window.scrollTo({top:0, behavior:'smooth'})}>
           <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center p-1 shadow-xl shrink-0 group-hover:scale-105 transition-transform overflow-hidden border border-gray-100">
             <img src={logoUrl} alt="VNC Logo" className="w-full h-full object-contain" />
@@ -48,7 +47,6 @@ const Navbar: React.FC<NavbarProps> = ({ onFindChurch, lang, setLang }) => {
           </div>
         </div>
 
-        {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-10">
           <div className="flex gap-8 items-center">
             {['About', 'Programs', 'Mandate', 'Services', 'Leadership', 'Media'].map(item => (
@@ -73,7 +71,6 @@ const Navbar: React.FC<NavbarProps> = ({ onFindChurch, lang, setLang }) => {
           </button>
         </div>
 
-        {/* Mobile Toggle */}
         <button 
           className="lg:hidden p-3 rounded-2xl transition-colors" 
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -83,7 +80,6 @@ const Navbar: React.FC<NavbarProps> = ({ onFindChurch, lang, setLang }) => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {mobileOpen && (
         <div className="lg:hidden fixed inset-0 top-[60px] bg-white z-[90] p-8 flex flex-col animate-in fade-in slide-in-from-top duration-300 overflow-y-auto">
            <div className="flex-1 space-y-6 mt-10">
@@ -120,6 +116,11 @@ const Navbar: React.FC<NavbarProps> = ({ onFindChurch, lang, setLang }) => {
            </div>
         </div>
       )}
+
+      {/* Items preserved for future use */}
+      <div className="hidden">
+        <Globe /> <ChevronDown />
+      </div>
     </nav>
   );
 };

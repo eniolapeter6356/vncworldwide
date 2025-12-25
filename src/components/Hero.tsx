@@ -26,13 +26,11 @@ const Hero: React.FC<HeroProps> = ({ onFindChurch, lang }) => {
           backgroundPosition: 'center' 
         }}
       >
-        {/* Adjusted overlays to be 15% less aggressive for better image visibility */}
         <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-transparent to-black" />
       </div>
       
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 w-full flex flex-col items-center">
-        {/* Main Title - Reduced font size as requested */}
         <div className="space-y-6 md:space-y-10 mb-10 md:mb-14">
           <h1 className="font-serif text-[clamp(2.2rem,6.5vw,5rem)] text-white font-black leading-[1.1] tracking-tighter animate-in slide-in-from-bottom-12 duration-1000 max-w-5xl mx-auto drop-shadow-2xl">
             {title}
@@ -42,7 +40,6 @@ const Hero: React.FC<HeroProps> = ({ onFindChurch, lang }) => {
           </p>
         </div>
 
-        {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full sm:w-auto animate-in slide-in-from-bottom-4 duration-500 delay-500">
           <button 
             onClick={onFindChurch} 
@@ -57,9 +54,13 @@ const Hero: React.FC<HeroProps> = ({ onFindChurch, lang }) => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-20 hidden md:block">
         <div className="w-[1px] h-16 rounded-full bg-gradient-to-b from-white to-transparent"></div>
+      </div>
+
+      {/* Items preserved for future use */}
+      <div className="hidden">
+        <Globe />
       </div>
 
       <style>{`

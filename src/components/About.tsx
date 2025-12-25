@@ -27,7 +27,7 @@ const About: React.FC<AboutProps> = ({ lang }) => {
   ];
 
   return (
-    <section id="about" className="py-24 md:py-40 bg-white overflow-hidden relative w-full">
+    <section id="about" title={title} className="py-24 md:py-40 bg-white overflow-hidden relative w-full">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 items-center">
           <div className="order-2 lg:order-1 relative space-y-12">
@@ -84,6 +84,10 @@ const About: React.FC<AboutProps> = ({ lang }) => {
             </div>
           </div>
         </div>
+      </div>
+      {/* Items preserved for future use */}
+      <div className="hidden">
+        <ArrowUpRight /> <Calendar />
       </div>
     </section>
   );
